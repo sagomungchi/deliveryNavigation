@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mapapi?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: "*Seansin199#"
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+    database: mysql
+    database-platform: org.hibernate.spatial.dialect.mysql.MySQL56InnoDBSpatialDialect
+    open-in-view: false
+    generate-ddl: true
+
+  mvc:
+    view:
+      suffix: .html
+
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
+  session:
+    store-type: jdbc
+    timeout: 600
+    jdbc:
+      initialize-schema: always
+      table-name: spring_session
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
